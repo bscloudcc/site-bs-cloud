@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #f1f6fc31;
+}
+
+section,
+footer {
+  padding: 54px 0;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+p {
+  color: #0000009c;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.btn {
+  background-color: #4f9cf9;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-block; /*tbm será um elemento inline, q terá comportamento de bloco*/
+  transition: 0.1s;
+}
+
+.btn.animate-btn {
+  animation: animate-outline 1s ease-out infinite;
+}
+
+.btn:hover {
+  background-color: #3580db;
+}
+
+@keyframes animate-outline {/*Propriedade keyframes, cria animações baseada em ponto chaves 4 chaves? Serve p/ criar uma animação, começa a crescer uma pequena borda em torno do botão e depois some. */
+  from {
+    outline: 0px solid #4f9bf98a; /*é quase parecido com uma borda*/
+  }
+  to {
+    outline: 15px solid #4f9bf900;
+  }
+}
+
+header {
+     background-position: center;
+     background-size: cover;
+     background-attachment: fixed;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top:10px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul a {
+  color: white;
+  margin: 0 27px;
+  text-transform: initial; /*td texto em caixa alta 27min47s do vídeo*/
+  font-size: 16px;
+  display: block; /*para ter comportamento de bloco, pq o link, por padrão, é inline*/
+}
+
+nav ul a:not(.btn)::after { /*Desse jeito, a animação n irá acontecer no botão, tem q colocar o nome da classe dentro do parentese, nesse caso, foi a classe do botão. Aqui é para criar uma linha abaixo das tags de nav do header, quando o mouse passar por cima. O pseudo-elemento after vai criar esse outro elemento de cor nas tags a*/
+  content: ""; /*add um conteúdo, pode ser ao lado, abaixo..?*/
+  background-color: #0a1e30b6;
+  height: 3px;
+  width: 0%; /*a linha vai ocupar o tamanho que tiver nessa %, em relação ao seu elemento-pai, nesse caso, da palavra. Assin, ela n vai aparecer (0%). Se colocasse 50%, a linha abaixo da palavra iria ocupar metade da palavra*/
+  display: block;
+  margin: 0 auto; /*desse jeito, a animação vai começar pelo centro*/
+  transition: 0.3s;
+}
+
+nav ul a:hover::after { /*aqui é para fazer com que a linha abaixo das palavras n fique aparecendo. Irá aparecer, somente quando passar o mouse em cima das palavras (animação)*/
+  width: 100%; /*quando o mouse passar em cima das palavras, a linha irá ocupar 100% da palavra*/
+}
+
+/*MENU MOBILE*/
+nav .menu-icon {
+  cursor: pointer;
+  font-size: 25px;
+  color: white;
+  display: none;
+}
+
+nav .close-icon {
+  display: none;
+  font-size: 30px;
+  color: white;
+}
+
+.banner { /*1ª seção q tem o banner (h1, texto e botão (n pega o bg aqui))*/
+  display: flex;
+  justify-content: center; /*alinha os elementos no eixo x (horizontal). Essa propriedade aceita valores como: flex-start: alinha os elementos no início do eixo; flex-end: no fim; center: centro; space-between: vai deixar o espaço entre os elementos iguais, sendo o 1º elemento alinhado no início e o último no final; space-around: quase o mesmo do anterios, mas ele add uma margen entre o início e o 1° elemento e entre o último elemento e o fim; space-evenly: */
+}
+
+.banner .banner-text { /*div com a class bannter-text*/
+  margin: 150px;
+  text-align: center;
+  padding: 15px 90px 0 90px;
+}
+
+.banner .banner-text h1 {
+  font-size: 56px;
+  color: white;
+}
+
+.banner .banner-text p {
+  font-size: 18px;
+  color: #ffffffb7;
+  font-weight: lighter;
+  margin: 18px 0; /*margin do paragráfo*/
+  padding-bottom: 15px;
+}
+
+/*FAÇA MAIS*/
+.faca-mais .container {
+  display: flex;
+  align-items: center;
+}
+
+.faca-mais .faca-mais-text {
+  width: 50%; /*vai ocupar 50% da largura e os outros 50% serão da img*/
+  padding: 0 40px;
+}
+
+.faca-mais .faca-mais-text h3 {
+  font-size: 32px;
+}
+
+.faca-mais .faca-mais-text p {
+  margin: 15px 0 10px 0;
+}
+
+.lista-scroll02 {
+  margin-bottom: 10px;
+  padding: 17px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27px;
+  color: #343538;
+}
+
+.faca-mais .faca-mais-img {
+  width: 50%; /*vai ocupar 50% da largura e os outros 50% serão o texto*/
+}
+
+.faca-mais .faca-mais-img img {
+  width: 100%; /*vai ocupar 100% dos 50% pai, que no caso é o faca-mais faca-mais-img /\*/
+}
+
+/*Início do COMO TRABALHAMOS*/
+.como-trabalhamos-text h3 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 70px;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.como-trabalhamos-text p {
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  color: #FFFFFF;
+  margin-top: 10px;
+}
+
+.como-trabalhamos-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 56px 0;
+}
+/*FIM COMO TRABALHAMOS*/
+
+/*Início do 5° scroll (depoimentos)*/
+.depoimentos h3 {
+  text-align: center;
+  color: #000000;
+  font-size: 32px;
+  }
+  
+  .depoimentos p {
+    margin: 20px 0;
+    text-align: center;
+    color: #000000;
+  }
+  
+  /* 
+  .img {
+    margin-bottom: 8px;
+  } */
+  
+  .card {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .depoimentos .card-item {
+    margin: 15px;
+    padding: 16px 32px;
+    text-align: center;
+    width: 450px;
+    box-shadow: 0px 10px 40px rgba(101, 136, 224, 0.57);
+    border-radius: 8px;
+    /*transition: 0.3s;*/
+  }
+  
+  .depoimentos .card-item .img {
+    display: block;
+    margin: 10px auto;
+  }
+  
+  .depoimentos .card-item .name-user {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #71767a23;
+    /*transition: 0.3s;*/
+  }
+  
+  .depoimentos .card-item .depoimento-user {
+    font-size: 16px;
+    padding: 0 15px;
+    /*transition: 0.3s;*/
+  }
+  
+  .depoimentos .card-item .estrelas {
+    margin: 15px 0;
+    padding-top: 15px;
+  }
+  
+  .depoimentos .card-item .estrelas i {
+    color: #3379ce;
+    margin-top: 15px;
+    /*transition: 0.3s;*/
+  }
+  
+  /*.depoimentos .card-item:hover {
+    background-color: #4f9cf9;
+    margin-top: -5px;
+  }
+  
+  .depoimentos .card-item:hover .name-user,
+  .depoimentos .card-item:hover .depoimento-user,
+  .depoimentos .card-item:hover .estrelas i {
+    color: #FFFFFF;
+  } */
+
+/*Início do 6° scroll (clientes)*/
+.nossos-trabalhos h3 {
+  text-align: center;
+  color: #000000;
+  font-size: 32px;
+  }
+  
+  .nossos-trabalhos p {
+    margin: 20px 0;
+    text-align: center;
+    color: #000000;
+  }
+  
+  .case {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .nossos-trabalhos .case-item {
+    margin: 15px;
+    padding: 16px 32px;
+    text-align: center;
+    width: 450px;
+    transition: 0.3s;
+  }
+  
+  .nossos-trabalhos .case-item .img {
+    display: block;
+    margin: 10px auto;
+  }
+  
+  .nossos-trabalhos .case-item .name-case {
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .nossos-trabalhos .case-item:hover {
+    background-color: #FFFFFF;
+    margin-top: -5px;
+  }
+  
+  .nossos-trabalhos .case-item:hover .name-case {
+    color: #000000;
+  }
+
+/*NOSSOS CLIENTES (mudar p/ tecnologias que trabalhamos)*/
+.clientes h3,
+.clientes p {
+  text-align: center;
+}
+
+.clientes .container div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /*vai deixar os espaços entre os itens e tbm nas bordas */
+}
+
+/*INÍCIO Se interessou?*/
+.ficou-interessado {
+  padding: 156px;
+  display: flex;
+  justify-content: center;
+}
+
+.ficou-interessado .ficou-interessado-text {
+  margin: 10px 0;
+  text-align: center;
+  padding: 0 90px;
+}
+
+.ficou-interessado .ficou-interessado-text h3 {
+  color: #000000;
+}
+
+.ficou-interessado .ficou-interessado-text p {
+  color: #000000;
+  font-weight: lighter;
+  margin: 18px 0;
+  padding-bottom: 24px;
+}
+
+/*FOOTER*/
+.footer {
+  background-color: #1E1F24;
+  text-align: center;
+  padding: 72px;
+}
+
+.footer i {
+  color: #FFFFFF;
+  font-size: 24px;
+  padding: 10px;
+  margin: 4px;
+}
+
+.footer p {
+  margin-top: 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+/*menu mobile*/
+@media(max-width: 830px) {
+  /*menu mobile*/
+  .ul {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #0A1E30;
+    width: 100%;
+    height: 100%;
+    flex-direction: column; /*muda a direção do flex, vão ficar todos na vertical*/
+    align-items: center; /*deixar td centralizado*/
+    justify-content: center;
+    clip-path: circle(0% at 100% 0);
+    transition: 0.7s;
+  }
+
+  .ul.open {
+    clip-path: circle(142.2% at 100% 0);
+  }
+
+  .ul a {
+    margin: 10px 0;
+    font-size: 16px;
+  }
+
+  nav .menu-icon {
+    display: block;
+  }
+
+  nav .close-icon {
+    display: block;
+    position: absolute;
+    top: 46px;
+    right: 28px;
+  }
