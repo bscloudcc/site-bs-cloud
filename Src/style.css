@@ -273,7 +273,7 @@ nav .close-icon {
     color: #FFFFFF;
   } */
 
-/*Início do 6° scroll (clientes)*/
+/*Início NOSSOS TRABALHOS*/
 .nossos-trabalhos h3 {
   text-align: center;
   color: #000000;
@@ -318,6 +318,8 @@ nav .close-icon {
   .nossos-trabalhos .case-item:hover .name-case {
     color: #000000;
   }
+
+/*FIM NOSSOS TRABALHOS*/
 
 /*NOSSOS CLIENTES (mudar p/ tecnologias que trabalhamos)*/
 .clientes h3,
